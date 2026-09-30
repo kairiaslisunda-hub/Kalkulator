@@ -1,5 +1,6 @@
 import 'package:belajarflutter/kalkulator_baru.dart';
 import 'package:belajarflutter/login_clone.dart';
+import 'package:belajarflutter/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 // import 'login_page.dart';
@@ -18,7 +19,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: KalkulatorBaru(),
+      title: "Belajar Flutter",
+      initialRoute: Routes.registration,
+      getPages: Routes.myPages,
+
+      
+
+      // home: KalkulatorBaru(),
     );
 
 
