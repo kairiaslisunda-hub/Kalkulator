@@ -1,5 +1,6 @@
 import 'package:belajarflutter/kalkulator_baru.dart';
 import 'package:belajarflutter/login_clone.dart';
+import 'pages/list_produk_page.dart';
 import 'package:belajarflutter/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -20,12 +21,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: "Belajar Flutter",
-      initialRoute: Routes.registration,
+      initialRoute: Routes.mainMenu,
       getPages: Routes.myPages,
 
       
 
-      // home: KalkulatorBaru(),
+      //  home: KalkulatorBaru(),
     );
 
 
