@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:belajarflutter/routes.dart';
 import 'package:belajarflutter/pages/main_menu_page.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class LoginCloneFixController extends GetxController {
           final data = jsonDecode(response.body);
           if (data['status'] == true) {
             Get.snackbar("Success", data['message']);
-            Get.off(() => MainMenuPage());
+            Get.offNamed(Routes.menuDrawer);
           } else {
             Get.snackbar("Error", data['message']);
           }
@@ -43,7 +44,6 @@ class LoginCloneFixController extends GetxController {
       } catch (e) {
 
         Get.snackbar("Error", e.toString());
-        print("error = " + e.toString());
 
       }
 
