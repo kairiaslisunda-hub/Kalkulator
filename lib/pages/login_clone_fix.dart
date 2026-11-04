@@ -1,5 +1,10 @@
+import 'package:belajarflutter/controller/login_clone_fix_controller.dart';
 import 'package:flutter/material.dart';
-
+import 'package:belajarflutter/routes.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import '../components/textfield.dart';
 import '../components/textview.dart';
 import '../components/button.dart';
@@ -7,8 +12,10 @@ import '../components/button.dart';
 class LoginCloneFix extends StatelessWidget {
    LoginCloneFix({super.key});
 
-  final TextEditingController usernameController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  final controller = Get.put(LoginCloneFixController());
+
+  // final TextEditingController usernameController = TextEditingController();
+  // final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +37,8 @@ class LoginCloneFix extends StatelessWidget {
             
             MyTextfield(
             Myhint: "Username, email or mobile number",
-            txtController: usernameController,
+            txtController: controller.txtUsername,
+            // txtController: usernameController,
             radius: 8.0,
             ),
 
@@ -38,17 +46,26 @@ class LoginCloneFix extends StatelessWidget {
             
             MyTextfield(
             Myhint: "Password",
-            txtController: passwordController,
+            txtController: controller.txtPassword,
+            //txtController: passwordController,
             radius: 8.0,
             ),
 
             const SizedBox(height: 16),
 
-            MyButton(
+            Obx(
+            ()=> controller.isLoading.value ? Center(child: CircularProgressIndicator(),) : MyButton(
             text: "Log in",
             color: const Color.fromARGB(255, 174, 6, 165),
-            onPressed: () {},
+            onPressed: () {
+
+              controller.login();
+  
+                },
+              ), 
             ),
+
+            
 
             const SizedBox(height: 16),
 
@@ -60,11 +77,6 @@ class LoginCloneFix extends StatelessWidget {
 
             const SizedBox(height: 16),
             
-            MyButton(
-            text: "Create new account",
-            color: Colors.grey,
-            onPressed: () {},
-          ),
           ],
         ),
       ),

@@ -6,6 +6,7 @@ import 'package:belajarflutter/pages/detail_produk_page.dart';
 import 'package:belajarflutter/pages/registration_page.dart';
 import 'package:belajarflutter/pages/list_produk_page.dart';
 import 'package:belajarflutter/pages/main_menu_page.dart';
+import 'package:belajarflutter/pages/login_clone_fix.dart';
 import 'package:get/get.dart';
 
 class Routes {
@@ -19,6 +20,7 @@ class Routes {
   static const String home = "/home";
   static const String history = "/history";
   static const String profile = "/profile";
+  static const String loginClone = "/loginClone";
   // login, kalkulator, dll
 
   // kita tampung kedalam array yang akan kita pasang ke main dart
@@ -32,6 +34,7 @@ class Routes {
     GetPage(name: home, page:() => HomePage()),
     GetPage(name: history, page:() => HistoryPage()),
     GetPage(name: profile, page:() => ProfilePage()),
+    GetPage(name: loginClone, page:() => LoginCloneFix()),
     // others page here etc 
   ];
 }

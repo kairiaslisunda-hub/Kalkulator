@@ -4,10 +4,10 @@ import 'pages/list_produk_page.dart';
 import 'package:belajarflutter/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-// import 'login_page.dart';
-// import 'kalkulator.dart';
-// import 'login_clone.dart';
-// import 'pages/login_clone_fix.dart';
+ import 'login_page.dart';
+ import 'kalkulator.dart';
+ import 'login_clone.dart';
+ import 'pages/login_clone_fix.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: "Belajar Flutter",
-      initialRoute: Routes.mainMenu,
+      initialRoute: Routes.loginClone,
       getPages: Routes.myPages,
 
       
