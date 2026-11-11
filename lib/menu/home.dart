@@ -2,6 +2,7 @@ import 'package:belajarflutter/pages/menu_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:belajarflutter/controller/list_produk_controller.dart';
+import 'package:belajarflutter/routes.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -66,6 +67,17 @@ class HomePage extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
+
+                            const SizedBox(height: 20),
+                              Center(
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    Get.toNamed(Routes.listProduk);
+                                  },
+                                  child: const Text('Lihat Semua Pemain'),
+                                ),
+                              ),
+                            
                             ClipRRect(
                               borderRadius: const BorderRadius.vertical(
                                 top: Radius.circular(12),
